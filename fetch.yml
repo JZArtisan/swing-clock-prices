@@ -1,0 +1,26 @@
+name: fetch-prices
+on:
+  schedule:
+    - cron: "15 5 * * *"      # 05:15 UTC = 13:15 SGT daily: after every Asia close, after the US close of the previous day
+  workflow_dispatch:
+    inputs:
+      range:
+        description: "Yahoo range (1mo default; 1y/2y for a seed)"
+        default: "1mo"
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -B fetch.py
+        env:
+          RANGE: ${{ github.event.inputs.range || '1mo' }}
+      - run: |
+          git config user.name "swing-clock-fetch"
+          git config user.email "fetch@users.noreply.github.com"
+          git add latest data
+          git diff --cached --quiet || git commit -m "fetch $(date -u +%FT%TZ)"
+          git push

@@ -1,0 +1,462 @@
+{
+ "DRAM": [
+  "DRAM",
+  "USD",
+  "America/New_York"
+ ],
+ "700": [
+  "0700.HK",
+  "HKD",
+  "Asia/Hong_Kong"
+ ],
+ "2020": [
+  "2020.HK",
+  "HKD",
+  "Asia/Hong_Kong"
+ ],
+ "NKY": [
+  "^N225",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "STI": [
+  "^STI",
+  "SGD",
+  "Asia/Singapore"
+ ],
+ "WDC": [
+  "WDC",
+  "USD",
+  "America/New_York"
+ ],
+ "SNDK": [
+  "SNDK",
+  "USD",
+  "America/New_York"
+ ],
+ "6981": [
+  "6981.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "7832": [
+  "7832.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "HSI": [
+  "^HSI",
+  "HKD",
+  "Asia/Hong_Kong"
+ ],
+ "EUV": [
+  "EUV",
+  "USD",
+  "America/New_York"
+ ],
+ "SKHY": [
+  "SKHY",
+  "USD",
+  "America/New_York"
+ ],
+ "US10Y": [
+  "^TNX",
+  "USD",
+  "America/Chicago"
+ ],
+ "VIX": [
+  "^VIX",
+  "USD",
+  "America/Chicago"
+ ],
+ "USDKRW": [
+  "KRW=X",
+  "KRW",
+  "Europe/London"
+ ],
+ "AIPO": [
+  "AIPO",
+  "USD",
+  "America/New_York"
+ ],
+ "DFNS": [
+  "DFNS.L",
+  "USD",
+  "Europe/London"
+ ],
+ "285A": [
+  "285A.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "XAU": [
+  "GC=F",
+  "USD",
+  "America/New_York"
+ ],
+ "GLW": [
+  "GLW",
+  "USD",
+  "America/New_York"
+ ],
+ "XLB": [
+  "XLB",
+  "USD",
+  "America/New_York"
+ ],
+ "SPY": [
+  "SPY",
+  "USD",
+  "America/New_York"
+ ],
+ "HYNIX_KR": [
+  "000660.KS",
+  "KRW",
+  "Asia/Seoul"
+ ],
+ "200A": [
+  "200A.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "RTX": [
+  "RTX",
+  "USD",
+  "America/New_York"
+ ],
+ "GEV": [
+  "GEV",
+  "USD",
+  "America/New_York"
+ ],
+ "GMD": [
+  "GMD.AX",
+  "AUD",
+  "Australia/Sydney"
+ ],
+ "GDX": [
+  "GDX",
+  "USD",
+  "America/New_York"
+ ],
+ "AMZN": [
+  "AMZN",
+  "USD",
+  "America/New_York"
+ ],
+ "XLC": [
+  "XLC",
+  "USD",
+  "America/New_York"
+ ],
+ "AMD": [
+  "AMD",
+  "USD",
+  "America/New_York"
+ ],
+ "BE": [
+  "BE",
+  "USD",
+  "America/New_York"
+ ],
+ "META": [
+  "META",
+  "USD",
+  "America/New_York"
+ ],
+ "ENR": [
+  "ENR.DE",
+  "EUR",
+  "Europe/Berlin"
+ ],
+ "TPX": [
+  "1306.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "D05": [
+  "D05.SI",
+  "SGD",
+  "Asia/Singapore"
+ ],
+ "RHC": [
+  "RHC.AX",
+  "AUD",
+  "Australia/Sydney"
+ ],
+ "GOOGL": [
+  "GOOGL",
+  "USD",
+  "America/New_York"
+ ],
+ "O39": [
+  "O39.SI",
+  "SGD",
+  "Asia/Singapore"
+ ],
+ "MSFT": [
+  "MSFT",
+  "USD",
+  "America/New_York"
+ ],
+ "AMAT": [
+  "AMAT",
+  "USD",
+  "America/New_York"
+ ],
+ "TCOM": [
+  "TCOM",
+  "USD",
+  "America/New_York"
+ ],
+ "SBM": [
+  "SBM.AX",
+  "AUD",
+  "Australia/Sydney"
+ ],
+ "INTC": [
+  "INTC",
+  "USD",
+  "America/New_York"
+ ],
+ "NVDA": [
+  "NVDA",
+  "USD",
+  "America/New_York"
+ ],
+ "005930": [
+  "005930.KS",
+  "KRW",
+  "Asia/Seoul"
+ ],
+ "TSM": [
+  "TSM",
+  "USD",
+  "America/New_York"
+ ],
+ "ABT": [
+  "ABT",
+  "USD",
+  "America/New_York"
+ ],
+ "XLE": [
+  "XLE",
+  "USD",
+  "America/New_York"
+ ],
+ "XLV": [
+  "XLV",
+  "USD",
+  "America/New_York"
+ ],
+ "XLRE": [
+  "XLRE",
+  "USD",
+  "America/New_York"
+ ],
+ "XLP": [
+  "XLP",
+  "USD",
+  "America/New_York"
+ ],
+ "XLI": [
+  "XLI",
+  "USD",
+  "America/New_York"
+ ],
+ "DXY": [
+  "DX-Y.NYB",
+  "USD",
+  "America/New_York"
+ ],
+ "SOXX": [
+  "SOXX",
+  "USD",
+  "America/New_York"
+ ],
+ "UKOIL": [
+  "BZ=F",
+  "USD",
+  "America/New_York"
+ ],
+ "ASX200": [
+  "^AXJO",
+  "AUD",
+  "Australia/Sydney"
+ ],
+ "AVGO": [
+  "AVGO",
+  "USD",
+  "America/New_York"
+ ],
+ "NEM": [
+  "NEM",
+  "USD",
+  "America/New_York"
+ ],
+ "MU": [
+  "MU",
+  "USD",
+  "America/New_York"
+ ],
+ "XLY": [
+  "XLY",
+  "USD",
+  "America/New_York"
+ ],
+ "EWY": [
+  "EWY",
+  "USD",
+  "America/New_York"
+ ],
+ "EWT": [
+  "EWT",
+  "USD",
+  "America/New_York"
+ ],
+ "XLU": [
+  "XLU",
+  "USD",
+  "America/New_York"
+ ],
+ "XLK": [
+  "XLK",
+  "USD",
+  "America/New_York"
+ ],
+ "XLF": [
+  "XLF",
+  "USD",
+  "America/New_York"
+ ],
+ "STX": [
+  "STX",
+  "USD",
+  "America/New_York"
+ ],
+ "LRCX": [
+  "LRCX",
+  "USD",
+  "America/New_York"
+ ],
+ "USDJPY": [
+  "USDJPY=X",
+  "JPY",
+  "Europe/London"
+ ],
+ "KLAC": [
+  "KLAC",
+  "USD",
+  "America/New_York"
+ ],
+ "SONY": [
+  "6758.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "BN4": [
+  "BN4.SI",
+  "SGD",
+  "Asia/Singapore"
+ ],
+ "U96": [
+  "U96.SI",
+  "SGD",
+  "Asia/Singapore"
+ ],
+ "8035": [
+  "8035.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "AKAM": [
+  "AKAM",
+  "USD",
+  "America/New_York"
+ ],
+ "SPCX": [
+  "SPCX",
+  "USD",
+  "America/New_York"
+ ],
+ "6501": [
+  "6501.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "7011": [
+  "7011.T",
+  "JPY",
+  "Asia/Tokyo"
+ ],
+ "NET": [
+  "NET",
+  "USD",
+  "America/New_York"
+ ],
+ "OKTA": [
+  "OKTA",
+  "USD",
+  "America/New_York"
+ ],
+ "COIN": [
+  "COIN",
+  "USD",
+  "America/New_York"
+ ],
+ "MA": [
+  "MA",
+  "USD",
+  "America/New_York"
+ ],
+ "CCJ": [
+  "CCJ",
+  "USD",
+  "America/New_York"
+ ],
+ "LEU": [
+  "LEU",
+  "USD",
+  "America/New_York"
+ ],
+ "MP": [
+  "MP",
+  "USD",
+  "America/New_York"
+ ],
+ "LYC": [
+  "LYC.AX",
+  "AUD",
+  "Australia/Sydney"
+ ],
+ "RKLB": [
+  "RKLB",
+  "USD",
+  "America/New_York"
+ ],
+ "ASTS": [
+  "ASTS",
+  "USD",
+  "America/New_York"
+ ],
+ "IONQ": [
+  "IONQ",
+  "USD",
+  "America/New_York"
+ ],
+ "OKLO": [
+  "OKLO",
+  "USD",
+  "America/New_York"
+ ],
+ "DDOG": [
+  "DDOG",
+  "USD",
+  "America/New_York"
+ ],
+ "QQQ": [
+  "QQQ",
+  "USD",
+  "America/New_York"
+ ]
+}
