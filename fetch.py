@@ -22,21 +22,30 @@ def get(url, timeout=30):
     with opener.open(url, timeout=timeout) as r:
         return r.status, r.read()
 
+YAHOO_OK = True
 def crumb():
+    """Cookie + crumb. If Yahoo answers 429 to the crumb twice, Yahoo is throttling this runner: skip it for the run (stooq carries)."""
+    global YAHOO_OK
     try: get("https://fc.yahoo.com/")
     except Exception: pass
-    for i in range(4):
+    for i in range(2):
         try:
             s, b = get("https://query2.finance.yahoo.com/v1/test/getcrumb")
             t = b.decode().strip()
             if s == 200 and t and "Too Many" not in t: return t
-        except Exception as e: pass
-        time.sleep(3 * (i + 1))
+        except Exception as e:
+            if "429" not in str(e): print("crumb error:", str(e)[:80], flush=True)
+        time.sleep(3)
+    YAHOO_OK = False
+    print("yahoo: crumb refused (throttled runner) — stooq only this run", flush=True)
     return ""
 
+THROTTLED = 0
 def yahoo(sym, tz, cr):
-    for host in ("query2", "query1"):
-        for i in range(3):
+    global YAHOO_OK, THROTTLED
+    if not YAHOO_OK: raise RuntimeError("yahoo skipped")
+    for host in ("query2",):
+        for i in range(2):
             try:
                 url = "https://%s.finance.yahoo.com/v8/finance/chart/%s?range=%s&interval=1d" % (host, urllib.parse.quote(sym, safe=""), RANGE)
                 if cr: url += "&crumb=" + urllib.parse.quote(cr, safe="")
@@ -53,9 +62,15 @@ def yahoo(sym, tz, cr):
                     o, h, l, v = [(qt.get(n) or [None]*len(ts))[k] for n in ("open", "high", "low", "volume")]
                     ohlcv.append("%s:%s;%s;%s;%s;%s" % (d, fmt(o), fmt(h), fmt(l), fmt(c), int(v or 0)))
                 if not pts: raise ValueError("empty")
+                THROTTLED = 0
                 return q["meta"].get("currency"), z, pts, ohlcv, "yahoo"
             except Exception as e:
-                last = e; time.sleep(2 * (i + 1))
+                last = e
+                if "429" in str(e):
+                    THROTTLED += 1
+                    if THROTTLED >= 3: YAHOO_OK = False; print("yahoo: 3 consecutive 429s — stooq only from here", flush=True)
+                    break
+                time.sleep(1.5)
     raise last
 
 STOOQ_SFX = {".T": ".jp", ".HK": ".hk", ".AX": ".au", ".L": ".uk", ".DE": ".de", ".SI": None, ".KS": None}
@@ -95,11 +110,12 @@ def main():
         except Exception as e1:
             try: c2, z, pts, ohlcv, s = stooq(sym, tz)
             except Exception as e2:
-                fails.append("%s:%s/%s" % (key, str(e1)[:30], str(e2)[:30])); continue
+                fails.append("%s:%s/%s" % (key, str(e1)[:30], str(e2)[:30])); print("%-10s FAIL %s / %s" % (key, str(e1)[:40], str(e2)[:40]), flush=True); continue
         src[s] += 1
+        print("%-10s %-6s %3d bars  last %s" % (key, s, len(pts), pts[-1][:8]), flush=True)
         rows.append("|".join([key, sym, c2 or ccy, z, ",".join(pts)]))
         orows.append("|".join([key, sym, c2 or ccy, z, ",".join(ohlcv)]))
-        time.sleep(0.4)
+        time.sleep(0.3)
     iso = D.datetime.now(D.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
     trailer = "FETCH|yahoo-v8|%s|%d|fails:%s" % (iso, len(rows), ";".join(fails) if fails else "none")
     note = "# sources yahoo=%d stooq=%d range=%s" % (src["yahoo"], src["stooq"], RANGE)
